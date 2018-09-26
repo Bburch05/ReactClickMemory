@@ -9,21 +9,17 @@ class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
     friends,
-    score : 0,
-    highscore : 0
-  };
-
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
+    scores : {
+      curr : 0,
+      high : 0
+    }
   };
 
   clickMemory = id => {
+    // Grabs the clicked image
     const image= this.state.friends.filter(friend => friend.id  === id)
-    console.log(image);
-    console.log(image[0].clicked);
+
+    // If the image has already been clicked
     if (image[0].clicked === true){
       let friends = this.state.friends.map(friend => {
         let friends = friend; 
@@ -31,38 +27,55 @@ class App extends Component {
         return friends;
       })
 
+      // Randomizes the friends array
       friends.sort(function(a, b){return 0.5 - Math.random()});
 
+      // Grabs the scores
+      let scores = this.state.scores
+
+      // If the current score is higher than the high score update it
+      if (scores.curr > scores.high){
+        scores.high = scores.curr;
+      }
+      scores.curr = 0
+
       this.setState({
-        highscore : this.state.score,
-        score: 0,
+        scores,
         friends
       });
     }
+
+    // If the Image hasn't already been clicked
     else {
-      console.log(this.state.friends)
+
       const friends = this.state.friends.map(friend => {
         if (friend.id === id ) {
+          // Updates the clicked friend clicked status
           let clickedfriend = friend;
           clickedfriend.clicked = true;
+
           return clickedfriend;
         }
         else return friend;
       });
-      console.log(friends)
+      // Randomizes the array
       friends.sort(function(a, b){return 0.5 - Math.random()});
+
       this.setState({
-         score: this.state.score + 1,
+         scores: {
+           curr : this.state.scores.curr + 1,
+           high : this.state.scores.high
+          },
          friends
         });
     }
   };
 
-  // Map over this.state.friends and render a FriendCard component for each friend object
+  // 
   render() {
     return (
       <Wrapper>
-        <Title score={this.state.score}>Friends List</Title>
+        <Title scores={this.state.scores}>Friends List</Title>
         {this.state.friends.map(friend => (
           <FriendCard
             removeFriend={this.clickMemory}

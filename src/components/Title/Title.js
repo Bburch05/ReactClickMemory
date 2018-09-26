@@ -3,8 +3,8 @@ import "./Title.css";
 
 const Title = props => <h1 className="title">
 {props.children}<br />
-Score: {props.score}
-High Score: {props.highscore}
+Score: {props.scores.curr} <br />
+High Score: {props.scores.high}
 </h1>;
 
 export default Title;
