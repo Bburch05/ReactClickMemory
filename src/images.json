@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Flors",
+    "image": "./images/first.png",
+    "clicked": false
+  },
+  {
+    "id": 2,
+    "name": "Flors",
+    "image": "./images/second.png",
+    "clicked": false
+  },
+  {
+    "id": 3,
+    "name": "Squidward",
+    "image": "./images/third.png",
+    "clicked": false
+  },
+  {
+    "id": 4,
+    "name": "Dexter",
+    "image": "./images/fourth.png",
+    "clicked": false
+  },
+  {
+    "id": 5,
+    "name": "Courage",
+    "image": "./images/fifth.png",
+    "clicked": false
+  },
+  {
+    "id": 6,
+    "name": "Doug Funnie",
+    "image": "./images/sixth.png",
+    "clicked": false
+  }
+]

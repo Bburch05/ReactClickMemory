@@ -1,8 +1,35 @@
-.title {
+.header-title {
   width: 100%;
   text-align: center;
   font-size: 3rem;
-  text-decoration: underline;
-  color: #2A77AE;
-  margin-bottom: 50px;
+  border-bottom: 5px solid black;
+}
+
+.scoreDiv {
+  margin-top: 10%;
+}
+
+.scoreDiv > ul {
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.scoreDiv > ul > li {
+  margin-bottom: 10px;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+.scoreDiv > ul > li > span {
+  color: rgb(211, 148, 32);
+  text-align: right;
+
+}
+
+.topinfo {
+  background-color: rgb(146, 11, 117);
+  border-bottom: 3px solid black;
+  color: white;
 }
