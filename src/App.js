@@ -85,7 +85,7 @@ class App extends Component {
   // 
   render() {
     return (
-      <div>
+      <div style={{backgroundImage: "url('./images/starring.png')"}}>
       <Title scores={this.state.scores} clickResult={this.state.clickResult}>Spirit Circle Memory Match</Title>
       <Wrapper>
         <ContentWrap>
