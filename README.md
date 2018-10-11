@@ -8,7 +8,7 @@ This project is Front-End only game made to demonstrate knowledge of React for G
 - React
 
 # View Instructions
-To view this deployed page visit the [Deployed Page](https://bburch05.github.io/ReactClickMemory/)
+Visit the [Deployed Page](https://bburch05.github.io/ReactClickMemory/)
 
 # App Instructions
 
